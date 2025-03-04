@@ -1,18 +1,19 @@
-use crate::ui::styles::ManagarrStyle;
-use ratatui::layout::{Alignment, Constraint, Layout, Rect};
-use ratatui::style::{Color, Style, Stylize};
-use ratatui::symbols;
-use ratatui::text::{Line, Span, Text};
-use ratatui::widgets::{Block, BorderType, Borders, LineGauge, ListItem, Paragraph, Wrap};
+use ratatui::{
+  layout::{Alignment, Constraint, Layout, Rect},
+  style::{Style, Stylize},
+  symbols,
+  text::{Line, Span, Text},
+  widgets::{Block, BorderType, Borders, LineGauge, ListItem, Paragraph, Wrap},
+};
 
-pub const COLOR_TEAL: Color = Color::Rgb(35, 50, 55);
+use crate::ui::styles::ManagarrStyle;
 
 #[cfg(test)]
 #[path = "utils_tests.rs"]
 mod utils_tests;
 
 pub fn background_block<'a>() -> Block<'a> {
-  Block::new().white().bg(COLOR_TEAL)
+  Block::new() // transparent background
 }
 
 pub fn layout_block<'a>() -> Block<'a> {
